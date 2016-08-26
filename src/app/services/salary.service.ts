@@ -23,10 +23,10 @@ export class SalaryService implements OnInit {
         currentSalary += parseInt(bid.amount);
       });
       this.totalSalary = currentSalary;
-      if (this.winningBids.length > 15) {
+      if (this.winningBids.length > 34) {
         this.maxBid = 0;
       } else {
-        this.maxBid = (this.loginService.user.maxSalary - currentSalary) - (16 - (this.winningBids.length + 1));
+        this.maxBid = (this.loginService.user.maxSalary - currentSalary) - (34 - (this.winningBids.length + 1));
       }
     }
 

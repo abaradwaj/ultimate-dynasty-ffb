@@ -33,10 +33,10 @@ import { AppRoutes } from './app.routing';
     { provide: FlexDirective, useValue: FlexDirective },
     { provide: LayoutDirective, useValue: LayoutDirective },
     defaultFirebase({
-      apiKey: "AIzaSyCWZiCSTN8Z0gI9KMGxgX3L_DTN5K1sjyQ",
-      authDomain: "dynasty-contract-ff.firebaseapp.com",
-      databaseURL: "https://dynasty-contract-ff.firebaseio.com",
-      storageBucket: "dynasty-contract-ff.appspot.com"
+      apiKey: "AIzaSyCJtm1eKZS-HEa7G665jrGkKFuQCgx7YNo",
+    authDomain: "dynasty-ultimate-ff.firebaseapp.com",
+    databaseURL: "https://dynasty-ultimate-ff.firebaseio.com",
+    storageBucket: "dynasty-ultimate-ff.appspot.com"
     }),],
   bootstrap: [AppComponent],
 })
