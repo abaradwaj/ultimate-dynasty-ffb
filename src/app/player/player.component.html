@@ -1,0 +1,55 @@
+<div layout="row">
+  <div flex="30">
+    <center>
+      <h1>{{name}} | {{position}} | {{team}} | Week {{bye}}</h1>
+      <h2 *ngIf="currMaxBid != null && currMaxBid[0]">{{ timeService.getTimeLeft(currMaxBid[0].time, timeService.datetime) }}</h2>
+    </center>
+    <div ng-controller="calculateValue">
+      <input placeholder="Years" [(ngModel)]="years" ng-change="calculateValue()">
+      <!--<select ng-model="years">
+        <option value="1">1 year</option>
+        <option value="2">2 years</option>
+        <option value="3">3 years</option>
+        <option value="4">4 years</option>
+        </select>-->
+
+      <input placeholder="Amount" [(ngModel)]="amount" ng-change="calculateValue()"> Value = ${{years * amount + (4 - years) * (amount / 2)}}
+      <button (click)="clicked()">Submit</button>
+    </div>
+
+
+
+    <table class="table-fill">
+      <thead>
+        <tr>
+          <th class="text-left">Username</th>
+          <th class="text-left">Time</th>
+          <th class="text-left">Years</th>
+          <th class="text-left">Amount</th>
+          <th class="text-left">Value</th>
+        </tr>
+      </thead>
+      <tbody class="table-hover">
+        <tr *ngFor="let bid of bids | async">
+          <td class="text-left">
+            {{ bid.username }}
+          </td>
+          <td class="text-left">
+            {{ timeService.getLocalTimeFromTimeStamp(bid.time) }}
+          </td>
+          <td class="text-left">
+            {{ bid.years }}
+          </td>
+          <td class="text-left">
+            {{ bid.amount }}
+          </td>
+          <td class="text-left">
+            {{ bid.value }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
